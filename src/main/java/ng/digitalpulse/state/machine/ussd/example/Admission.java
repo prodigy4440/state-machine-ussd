@@ -5,7 +5,6 @@
  */
 package ng.digitalpulse.state.machine.ussd.example;
 
-import java.io.Serializable;
 import ng.digitalpulse.state.machine.ussd.model.Context;
 import ng.digitalpulse.state.machine.ussd.model.Message;
 import ng.digitalpulse.state.machine.ussd.state.AbstractState;
@@ -23,7 +22,7 @@ public class Admission extends AbstractState {
     @Override
     public Message handle(Message message) {
         String phoneNumber = getContext().getPhoneNumber();
-        return new Message("COngratulations "+phoneNumber+", "
+        return new Message("Congratulations "+phoneNumber+", "
                 + "you have been given admission to XYZ University.", Message.Type.DISPLAY);
     }
     
