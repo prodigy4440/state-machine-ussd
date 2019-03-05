@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ng.digitalpulse.state.machine.ussd.state;
+package com.fahdisa.state.machine.ussd.state;
 
-import ng.digitalpulse.state.machine.ussd.model.Context;
-import ng.digitalpulse.state.machine.ussd.model.Message;
+import com.fahdisa.state.machine.ussd.model.Context;
+import com.fahdisa.state.machine.ussd.model.Message;
 
 
 /**
