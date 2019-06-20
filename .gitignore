@@ -1,2 +1,5 @@
 target/*
 
+/state-machine.iml
+.idea/
+*.iml
