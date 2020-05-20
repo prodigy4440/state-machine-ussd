@@ -26,6 +26,7 @@ public abstract class AbstractState implements State, Serializable {
         this.name = name;
         this.code = code;
         this.context = context;
+        this.context.setState(this);
     }
 
     @Override
@@ -35,7 +36,6 @@ public abstract class AbstractState implements State, Serializable {
 
     @Override
     public void setContext(Context context) {
-
         this.context = context;
     }
 

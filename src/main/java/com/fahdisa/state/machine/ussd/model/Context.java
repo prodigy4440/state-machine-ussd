@@ -6,6 +6,8 @@
 package com.fahdisa.state.machine.ussd.model;
 
 import java.io.Serializable;
+import java.util.LinkedHashMap;
+import java.util.Map;
 import java.util.Objects;
 import com.fahdisa.state.machine.ussd.state.State;
 
@@ -19,6 +21,8 @@ public class Context implements Serializable{
  
     private String phoneNumber;
     private State state;
+
+    private Map<String, Object> meta = new LinkedHashMap<>();
 
     public Context() {
     }
@@ -39,5 +43,35 @@ public class Context implements Serializable{
     public void setState(State state){
         this.state = state;
     }
-    
+
+    public Map<String, Object> getMeta() {
+        return meta;
+    }
+
+    public void setMeta(Map<String, Object> meta) {
+        this.meta = meta;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Context context = (Context) o;
+        return Objects.equals(phoneNumber, context.phoneNumber) &&
+                Objects.equals(state, context.state);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(phoneNumber, state);
+    }
+
+    @Override
+    public String toString() {
+        return "Context{" +
+                "phoneNumber='" + phoneNumber + '\'' +
+                ", state=" + state +
+                ", meta=" + meta +
+                '}';
+    }
 }
